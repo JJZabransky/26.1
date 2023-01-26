@@ -4,9 +4,10 @@ let isDrawing = false;
 let x = 0;
 let y = 0;
 
-canv.addEventListener('mousedown', (e) => isDrawing = true, x = e.offsetX, y = e.offsetY);
-canv.addEventListener('mousemove', draw());
-canv.addEventListener('mouseup', (e) => isDrawing = false);
+
+canv.addEventListener('mousedown', (e) =>{isDrawing = true; x = e.offsetX; y = e.offsetY; console.log(x+" "+y)});
+canv.addEventListener('mousemove', draw);
+canv.addEventListener('mouseup', () => isDrawing = false);
 
 function draw(e) {
     if(isDrawing) {
@@ -20,5 +21,5 @@ function draw(e) {
 }
 
 function clear() {
-    ctx.clearRect(0, 0, canv.width,canv.height);
+    
 }
