@@ -3,6 +3,7 @@ const ctx = canv.getContext("2d");
 let isDrawing = false;
 let x = 0;
 let y = 0;
+const clear = document.getElementById("reset");
 
 
 canv.addEventListener('mousedown', (e) =>{isDrawing = true; x = e.offsetX; y = e.offsetY; console.log(x+" "+y)});
@@ -21,5 +22,5 @@ function draw(e) {
 }
 
 function clear() {
-    
+    ctx.clearRect(0,0,canv.width,canv.height);
 }
